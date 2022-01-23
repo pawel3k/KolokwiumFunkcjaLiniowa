@@ -53,9 +53,13 @@ public class KolokwiumFunkcjaLiniowa  extends JFrame implements ActionListener {
 		
 	}
 
-	private void obliczFunkcje() {
+		private void obliczFunkcje() {
 		
 		try {
+			if(wartosc_a.getText().trim().equals("") || wartosc_b.getText().trim().equals("") || wartosc_x.getText().trim().equals("")) {
+				JOptionPane.showConfirmDialog(null, "Proszę podać poprawne dane!", "niepoprawne dane!", JOptionPane.CANCEL_OPTION);
+				return;
+			}
 		String pole_liczba_a = wartosc_a.getText();
 		double podanaLiczba_a = Double.parseDouble(pole_liczba_a);
 		
@@ -68,22 +72,9 @@ public class KolokwiumFunkcjaLiniowa  extends JFrame implements ActionListener {
 		double wartosc_y = (double) podanaLiczba_a*podanaLiczba_b+podanaLiczba_x; 
 		wartosc_koncowa_y.setText("Wartość funkcji dla podanych parametrów to: " + String.valueOf(wartosc_y));
 		
-	} 	catch(NumberFormatException e1) {
+	} catch(NumberFormatException e1) {
 		JOptionPane.showConfirmDialog(null, "Wprowadz liczby!", "niepoprawne dane!", JOptionPane.CANCEL_OPTION);
 	}
-		
-		if(wartosc_a.getText().trim().equals("")) {
-			JOptionPane.showConfirmDialog(null, "Proszę podać poprawne dane!", "niepoprawne dane!", JOptionPane.CANCEL_OPTION);
-		}
-		
-		if(wartosc_b.getText().trim().equals("")) {
-			JOptionPane.showConfirmDialog(null, "Proszę podać poprawne dane!", "niepoprawne dane!", JOptionPane.CANCEL_OPTION);
-		}
-		
-		if(wartosc_x.getText().trim().equals("")) {
-			JOptionPane.showConfirmDialog(null, "Proszę podać poprawne dane!", "niepoprawne dane!", JOptionPane.CANCEL_OPTION);
-		}
-		
-		
+
 	}
 }
