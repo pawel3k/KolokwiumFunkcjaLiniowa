@@ -23,10 +23,10 @@ public class KolokwiumFunkcjaLiniowa  extends JFrame implements ActionListener {
 
 	private void initUI() {
 		
-		wartosc_a = new JTextField("Podaj wspó³czynnik kierunkowy a: ");
+		wartosc_a = new JTextField("Podaj wspÃ³Â³czynnik kierunkowy a: ");
 		wartosc_b = new JTextField("Podaj wyraz wolny b: ");
 		wartosc_x = new JTextField("Podaj argument x: ");
-		oblicz = new JButton("Oblicz wartoœæ funkcji dla podanych wartoœci!");
+		oblicz = new JButton("Oblicz wartoÅ“Ã¦ funkcji dla podanych wartoÅ“ci!");
 		oblicz.addActionListener(this);
 		wartosc_koncowa_y = new JLabel();
 		
@@ -66,23 +66,24 @@ public class KolokwiumFunkcjaLiniowa  extends JFrame implements ActionListener {
 		double podanaLiczba_x = Double.parseDouble(pole_liczba_x);
 		
 		double wartosc_y = (double) podanaLiczba_a*podanaLiczba_b+podanaLiczba_x; 
-		wartosc_koncowa_y.setText("Wartoœæ funkcji dla podanych parametrów to: " + String.valueOf(wartosc_y));
-		
-		if(wartosc_a.getText().isEmpty()) {
-			wartosc_koncowa_y.setText("Proszê podaæ poprawne dane");
-		}
-		
-		if(wartosc_b.getText().isEmpty()) {
-			wartosc_koncowa_y.setText("Proszê podaæ poprawne dane");
-		}
-		
-		if(wartosc_x.getText().isEmpty()) {
-			wartosc_koncowa_y.setText("Proszê podaæ poprawne dane");
-		}
+		wartosc_koncowa_y.setText("WartoÅ›Ä‡ funkcji dla podanych parametrÃ³w to: " + String.valueOf(wartosc_y));
 		
 	} catch(NumberFormatException e1) {
 		wartosc_koncowa_y.setText("Wprowadz liczby!");
 	}
+		
+		if(wartosc_a.getText().trim().equals("")) {
+			wartosc_koncowa_y.setText("ProszÄ™ podaÄ‡ poprawne dane");
+		}
+		
+		if(wartosc_b.getText().trim().equals("")) {
+			wartosc_koncowa_y.setText("ProszÄ™ podaÄ‡ poprawne dane");
+		}
+		
+		if(wartosc_x.getText().trim().equals("")) {
+			wartosc_koncowa_y.setText("ProszÄ™ podaÄ‡ poprawne dane");
+		}
+		
 		
 	}
 }
