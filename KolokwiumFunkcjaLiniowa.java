@@ -68,20 +68,20 @@ public class KolokwiumFunkcjaLiniowa  extends JFrame implements ActionListener {
 		double wartosc_y = (double) podanaLiczba_a*podanaLiczba_b+podanaLiczba_x; 
 		wartosc_koncowa_y.setText("Wartość funkcji dla podanych parametrów to: " + String.valueOf(wartosc_y));
 		
-	} catch(NumberFormatException e1) {
-		wartosc_koncowa_y.setText("Wprowadz liczby!");
+	} 	catch(NumberFormatException e1) {
+		JOptionPane.showConfirmDialog(null, "Wprowadz liczby!", "niepoprawne dane!", JOptionPane.CANCEL_OPTION);
 	}
 		
 		if(wartosc_a.getText().trim().equals("")) {
-			wartosc_koncowa_y.setText("Proszę podać poprawne dane");
+			JOptionPane.showConfirmDialog(null, "Proszę podać poprawne dane!", "niepoprawne dane!", JOptionPane.CANCEL_OPTION);
 		}
 		
 		if(wartosc_b.getText().trim().equals("")) {
-			wartosc_koncowa_y.setText("Proszę podać poprawne dane");
+			JOptionPane.showConfirmDialog(null, "Proszę podać poprawne dane!", "niepoprawne dane!", JOptionPane.CANCEL_OPTION);
 		}
 		
 		if(wartosc_x.getText().trim().equals("")) {
-			wartosc_koncowa_y.setText("Proszę podać poprawne dane");
+			JOptionPane.showConfirmDialog(null, "Proszę podać poprawne dane!", "niepoprawne dane!", JOptionPane.CANCEL_OPTION);
 		}
 		
 		
